@@ -1,0 +1,261 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    /* padding é o espaçamento da parte de dentro da caixa  e margin é o espaçamento da parte de fora da caixa*/
+    box-sizing: border-box;
+    /*a medida da caixa seja atraves da medida da borda*/
+}
+:root{
+  ---text-color:white;
+  ---bg-url: url(./assets/bg-mobile.jpg);
+  ---stroke-color:  rgba( 225,255,255,0.5);
+  ---surface-color: rgba(255,255,255,0.05);
+  ---surface-color-hover: rgba(0,0,0,0.2);
+  ---highlight-color:rgba(255,255,255,0.2);
+  ---switch-bg-url: url(assets/moon-stars.svg);
+
+}
+
+.light{
+  ---text-color:black;
+  ---bg-url: url(./assets/bg-mobile-light.jpg);
+  ---stroke-color:  rgba( 0,0,0,0.5);
+  ---surface-color: rgba(0,0,0,0.05);
+  ---surface-color-hover: rgba(0,0,0,0.2);
+  ---highlight-color:rgba(0,0,0,0.1);
+  ---switch-bg-url: url( assets/sun.svg);
+  }
+
+body{
+   
+ /* background-image: url(./bg-mobile.jpg); */
+ /* background-repeat: no-repeat; */
+ /* background-position: top center; */
+ /* background-size: cover; */
+ 
+
+ background: var(---bg-url) no-repeat top center/cover;
+  /* ele serve para localizar a imagem e coloca ela de fundo  */
+  
+ display: flex;              
+ /* ele serve para deixar o display flexivel */
+
+ justify-content: center;
+
+/* alinha os itens na horizontal  */
+
+ align-items: center;
+
+ /* alinha os itens na vertical  */
+  
+ font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+
+  color:var(---text-color);
+  
+}
+
+#container-geral{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#container{ 
+    width: 360px;
+   /*margin auto aplica todas as quatro propridade*/
+    margin: 56px auto 0px;
+    padding: 0 24px;
+   }
+/* profile */
+#profile{
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+display: block;
+ width: 112px;
+ margin: auto;
+
+}
+
+#profile p {
+    font-weight: 400;  
+    /*peso de linha e altura*/
+    line-height: 24px; 
+    margin-top: 8px;
+    margin-bottom: 15px;
+
+}
+/* switch 
+
+
+Explicação:
+1#switch: Este é o contêiner do botão, posicionado de forma relativa para conter o botão dentro dele.
+2#switch button: Este é o botão que se move. Ele é posicionado absolutamente dentro do contêiner.
+3.light #switch button: Quando a classe .light é adicionada ao body, o botão se move para a direita.
+
+*/
+
+
+#switch {
+  position: relative;
+  width: 64px; 
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  background-image:var(---switch-bg-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  position: absolute;
+  left:0;
+  z-index: 1;
+  transform: translatey( -50%); /* Assuming you want to center vertically */
+  top: 50%;
+  transition: all 0.3s ease;  
+  /* adiciona uma transicao suave  */
+}
+
+.light #switch button {
+  left: calc(100% - 32px);/*Move o botão para a direita */
+  }
+
+  #switch span{
+  
+   display: block;
+   width: 64px;
+   height: 24px;
+   background: var(---surface-color);
+   border: var(---stroke-color);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-radius: 999px;
+   
+
+  }
+
+
+
+li a{   color: var(---text-color);
+     text-decoration: none;  }
+
+/*links*/
+ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 16px;
+  /* espaço fora da caixa*/
+  padding: 24px 0;
+}
+
+ ul li a {
+  display: flex;
+  justify-content: center; 
+  padding: 16px 24px; /* define a distancia entre o conteudo de um elemento e sua borda*/ 
+  align-items: center;
+  background: var(---surface-color);
+  border: 1px solid var(---stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500 ;
+  
+  transition: backgroud 0.2s;
+  
+    }
+
+
+ /* pseudo-selector */
+
+ul li a:hover {
+  background: var(---surface-color-hover)
+  border-box.5px solid var(---text-color);
+ }
+
+/*social links*/
+#social-links{
+  display:flex;
+  justify-content: center;
+
+  padding: 24px 0 ; 
+  font-size: 24px;
+  
+}
+ #social-links a{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: var(---text-color);
+ padding: 16px;
+
+ transition: background 0.2s;
+ border-radius: 50%;
+}
+
+#social-links  a:hover {
+background: var(---highlight-color);
+
+
+}
+
+footer { 
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+
+}
+
+
+footer a {
+  color: var(---text-color);
+}
+  
+
+/* alinhamentos
+display block :margin
+display flex usa aling-items e justify -content
+alinhamento de texto text-align.
+
+#switch {
+  position: relative;
+  width: 64px; 
+  margin: 4px auto;
+
+#container-geral{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+position: absolute; 
+    right: 0;
+    z-index: 1;
+    transform: translate(50%, -50%);  Assuming you want to center vertically 
+    top: 50%   
+
+footer { 
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+
+
+
+
+
+*/
