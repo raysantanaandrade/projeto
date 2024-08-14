@@ -33,8 +33,8 @@ body{
  /* background-repeat: no-repeat; */
  /* background-position: top center; */
  /* background-size: cover; */
- 
-
+  height: 100vh; 
+/* altura  da parte visivel do meu dispositivo*/
  background: var(---bg-url) no-repeat top center/cover;
   /* ele serve para localizar a imagem e coloca ela de fundo  */
   
@@ -260,3 +260,14 @@ footer {
 
 
 */
+/* media queries dx a apresentaçao do conteudo adaptado a uma gama especifica de dispositivo nao precisando mudar o conteudo
+em si*/
+ @media (min-width:700px) {
+  :root{
+    ---bg-url: url(assets/bg-desktop.jpg); 
+  }
+  .light{
+    ---bg-url: url(assets/bg-desktop-light.jpg);
+  }
+
+ }
